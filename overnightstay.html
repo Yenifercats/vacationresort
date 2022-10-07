@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Design.css">
+        <link rel="stylesheet" href="styes.css">
+        <script src="scripts/main.js" href="main.js"></script>
+        <script src="scripts/main.js" href="calculate.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="logo">Take a Vacation</div>
+            <ul>
+                <li><a href="overnightstay.html">Plan A Stay</a></li>
+                 <li><a href="dinning.html">Explore Dinning</a></li>
+                 <li><a href="rentacar.html">Rent A Car</a></li>
+                 <li><a href="activities.html">Explore Activities</a></li>
+                 <li><a href="home.html">Home</a></li>
+            </ul>
+        </nav>
+
+        <!-- - enter their name and email -->
+        <label>
+            Name:
+            <input id="name" type="text" name="name" min="1">
+        </label>
+        <label>
+            Email:
+            <input id="email" type="email" name="email" min="3">
+        </label>
+        <!-- - select a check in date-->
+        <label>
+            Check In Date:
+            <input id="checkinDate" type="date">
+        </label>
+        <!-- - specify number of nights for the visit (1 - 28 days) -->
+        <label>
+            Specify Number Of Nights For The Visit (1 - 28 days):
+            <input id="nights" type="number" min="1" max="28">
+        </label>
+        <!-- - select a room type (use radio buttons that specify: Queen, King, 2-Bedroom Suite) -->
+        <label>
+         Room Type:
+        </label>
+         <label>
+            <input id="queen" type="radio" name="queen">
+            Queen
+         </label>
+         <label>
+            <input id="king" type="radio" name="king">
+            King
+         </label>
+         <label>
+            <input id="suite" type="radio" name="suite">
+            2-Bedroom Suite
+         </label>
+         <!-- - Specify the number of adults (1 - 4) and number of children (0 - 4) that will stay in the room being reserved -->
+         <label>
+            Number Of adults (1 - 4)
+            <input id="adult" type="number" min="1" max="4">
+         </label>
+         <label>
+            Number of children (0 - 4)
+            <input id="children" type="number" min="0" max="4">
+         </label>
+         <!-- - select wether they will use any discounts (use radio buttons that specify: None, AA/Senior (10%),  and Military (20%)) -->
+         <label>
+            Apply Discount:
+         </label>
+         <label>
+            <input id="military" name="discounts" type="radio">
+            Military (20%)
+         </label>
+         <label>
+            <input id="senior" name="discounts" type="radio">
+            AAA/Senior (10%)
+         </label>
+         <label>
+            <input id="none" name="discounts" type="radio">
+            None
+         </label>
+         <div id="container">
+         <button id="calculate">Calculate</button>
+         </div>
+    </body>
+</html>
