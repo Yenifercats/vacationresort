@@ -2,15 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="Design.css">
-        <link rel="stylesheet" href="styes.css">
-        <script src="scripts/main.js" href="main.js"></script>
-        <script src="scripts/main.js" href="calculate.js"></script>
     </head>
     <body>
         <nav>
             <div class="logo">Take a Vacation</div>
             <ul>
-                <li><a href="overnightstay.html">Plan A Stay</a></li>
                  <li><a href="dinning.html">Explore Dinning</a></li>
                  <li><a href="rentacar.html">Rent A Car</a></li>
                  <li><a href="activities.html">Explore Activities</a></li>
@@ -56,11 +52,11 @@
          <!-- - Specify the number of adults (1 - 4) and number of children (0 - 4) that will stay in the room being reserved -->
          <label>
             Number Of adults (1 - 4)
-            <input id="adult" type="number" min="1" max="4">
+            <input id="adult" type="number" min="1">
          </label>
          <label>
             Number of children (0 - 4)
-            <input id="children" type="number" min="0" max="4">
+            <input id="children" type="number" min="0">
          </label>
          <!-- - select wether they will use any discounts (use radio buttons that specify: None, AA/Senior (10%),  and Military (20%)) -->
          <label>
@@ -81,5 +77,19 @@
          <div id="container">
          <button id="calculate">Calculate</button>
          </div>
+         <div id="messageDiv"></div>
+
+         <!-- the original room cost-->
+         <div>Original: $<span id="room"></span></div>
+         <!-- the discount if any-->
+         <div>Discount: $<span id="discount"></span></div>
+         <!-- the discounted room cost-->
+         <div>Discounted room: $<span id="room"></span></div>
+         <!-- the tax-->
+         <div>Tax: $<span id="tax"></span></div>
+         <!-- the total cost of the stay-->
+         <div>Total cost: $<span id="total"></span></div>
+         <script src="scripts/main.js"></script>
+        <script src="scripts/calculate.js"></script>
     </body>
 </html>
