@@ -6,7 +6,7 @@ functio init(){
 window.onload = init;// wait until body content/html loaded into the window.
 */
 
-document.addEventListener("DOMContentLoaded", ()=>{ //BEGIN ANONYMOUS
+document.addEventListener("DOMContentLoaded", ()=>{
     //INIT CODE GOES HERE
 
 });

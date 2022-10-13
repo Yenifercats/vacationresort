@@ -6,32 +6,33 @@ function init(){
 window.onload = init;// wait until body content/html loaded into the window.
 */
 
-function isDateInHighSeason(checkinginDate){
-    const date = new Date(checkinginDate + "12:00am");
+function isDateInHighSeason(checkinginDate) {
+    const date = new Date(checkinginDate + " 12:00 am");
     const year = date.getFullYear();
     const seasonStart = new Date("Jun 1 " + year);
     const seasonEnd = new Date("Aug 31 " + year);
     return ((date >= seasonStart) && (date <= seasonEnd));
 }
 
-function getRoomRate(checkinDate, queen, king, suite){
-    let roomPrice= 0;
-    if(isDateInHighSeason(checkingDate)){
+function getRoomRate(checkinDate, queen, king, suite) {
+    let roomPrice = 0;
+    if (isDateInHighSeason(checkinDate)) {
         if (queen || king) {
             roomPrice = 250;
         } else if (suite) {
             roomPrice = 350;
         }
-    }else{ //LOW SEASON
-    if (queen || king){
-        roomPrice = 150;
-    }else if (suite) {
-        roomPrice = 210;
-    }
+    } else { //LOW SEASON
+        if (queen || king) {
+            roomPrice = 150;
+        } else if (suite) {
+            roomPrice = 210;
+        }
     }
     return roomPrice;
 }
-document.addEventListener("DOMContentLoaded", ()=>{ //BEGIN ANONYMOUS
+
+document.addEventListener("DOMContentLoaded", () => { //BEGIN ANONYMOUS
     //INIT CODE GOES HERE
     document.getElementById("calculate").addEventListener("click", () => {
 
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", ()=>{ //BEGIN ANONYMOUS
         const nights = document.getElementById("nights").value;
         const adults = document.getElementById("adults").value;
         const children = document.getElementById("children").value;
-        
+
 
         const queen = document.getElementById("queen").value;
         const king = document.getElementById("king").value;
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", ()=>{ //BEGIN ANONYMOUS
         if (queen) {
             occupancy = 5;
         } else if (king) {
-        occupancy = 2;
+            occupancy = 2;
         } else if (suite) {
             occupancy = 7;
         } else {
@@ -66,18 +67,18 @@ document.addEventListener("DOMContentLoaded", ()=>{ //BEGIN ANONYMOUS
         let guest = Number(adults) + Number(children);
 
         const messageDiv = document.getElementById("messageDiv");
-        if(guest > occupancy){
+        if (guest > occupancy) {
             messageDiv.innerHTML = "The room you selected will not hold your party, please submit appropriate party size.";
         } else {
             messageDiv.dispatchEvent.innerHTML = "";
         }
-
+        let roomPrice = getRoomRate(checkinDate, queen, king, suite)
         //DISCOUNT
         let discount = 0
         if (senior) {
             discount = roomPrice * 0.10
-        } else if (military){
-            discount = roomPrice *0.20
+        } else if (military) {
+            discount = roomPrice * 0.20
         }
 
         let discountedPrice = roomPrice - discount; //APPLY DISCOUNT

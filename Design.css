@@ -30,7 +30,7 @@ body {
  nav ul li a {
     line-height: 10px;
     color: #fff;
-    padding: 12px 40px;
+    padding: 12px 90px;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -66,12 +66,17 @@ body {
 
  label {
     display: block;
-    padding: 5px;
+    padding: 3px;
     text-align: center;
     text-decoration: none;
  }
  
+ 
  #container {
     text-align: center;
     padding: 9px;
+ }
+
+ div {
+   text-align: center;
  }
